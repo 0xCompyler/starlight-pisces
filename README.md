@@ -4,7 +4,6 @@
 [![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 
-
 </p>
 
 <!-- PROJECT LOGO -->
@@ -57,7 +56,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot]
 
 Starlight is a gamified virtual trading platform where traders can learn about stock trading, analyze their decisions and compete with their friends without the fear of losing actual money. 
 
