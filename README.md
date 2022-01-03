@@ -20,11 +20,11 @@
     <a href="https://aqua-client.vercel.app/h"><strong>Visit the website »</strong></a>
     <br />
     <br />
-    <a href="https://aqua-client.vercel.app/">View Demo</a>
+    <a href="https://github.com/0xCompyler/starlight-taurus/">Client Server</a>
     ·
-    <a href="https://github.com/0xCompyler/starlight-pisces/issues">Report Bug</a>
+    <a href="https://github.com/0xCompyler/starlight-aries/">Backend Server</a>
     ·
-    <a href="https://github.com/0xCompyler/starlight-pisces/issues">Request Feature</a>
+    <a href="https://github.com/0xCompyler/starlight-libra/">Socket Server</a>
   </p>
 </p>
 
