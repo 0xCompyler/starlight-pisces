@@ -56,6 +56,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+
+[![Product Name Screen Shot][product-screenshot]
+
 Starlight is a gamified virtual trading platform where traders can learn about stock trading, analyze their decisions and compete with their friends without the fear of losing actual money. 
 
 These are the features that we currently provide. 
@@ -255,3 +258,4 @@ Kartik Goel - [GitHub](https://github.com/kg-kartik) - goel.kartik39@gmail.com
 <img src = "https://imgs.xkcd.com/comics/music_drm.png">
 
 
+[product-screenshot]: STATIC/landing.png
