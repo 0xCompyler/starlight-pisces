@@ -253,9 +253,11 @@ Arijit Roy - [GitHub](https://github.com/radioactive11) - roy.arijit2001@gmail.c
 
 Kartik Goel - [GitHub](https://github.com/kg-kartik) - goel.kartik39@gmail.com
 
+Boidushya Bhattacharaya - [GitHub](https://github.com/boidushya) - boidushyabhattacharya@gmail.com
 
 
-<img src = "https://imgs.xkcd.com/comics/music_drm.png">
+
+<img src = "https://imgs.xkcd.com/comics/picking_bad_stocks.png">
 
 
 [product-screenshot]: STATIC/landing.png
