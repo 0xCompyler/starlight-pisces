@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from os import stat
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,7 +9,7 @@ import redis
 import logging
 from configparser import ConfigParser
 
-from scripts import search
+from scripts import search, fetch, news, top_stocks
 
 MODE = "development"
 
@@ -47,7 +48,8 @@ try:
         host=creds['host'],
         database=creds['database'],
         user=creds['user'],
-        password=creds['password']
+        password=creds['password'],
+        keepalives_idle=10
     )
     logging.log(msg=f"Connection to {MODE} PG database established", level=logging.INFO)
 
@@ -57,7 +59,7 @@ except Exception as e:
 
 try:
     logging.log(msg="Connecting to Redis database", level=logging.INFO)
-    redis_client = redis.Redis(host='localhost', port=6379, db=1)
+    redis_client = redis.Redis(host='redis-server', port=6379, db=1)
     logging.log(msg=f"Connection to {MODE} redis established", level=logging.INFO)
 
 except Exception as e:
@@ -74,3 +76,35 @@ def _search(request_body: SearchResource):
     return results
 
 
+class StockResource(BaseModel):
+    symbol: str
+
+@app.post('/performance')
+def _performance(request_body: StockResource):
+    result = fetch.get_stock(conn, request_body.symbol)
+
+    if result is None:
+        raise HTTPException(status_code=418, detail="Symbol not found") 
+
+    return result
+
+
+@app.get('/news')
+def _news():
+    result = news.general(redis_client)
+
+    return result
+
+
+@app.get('/top/{index}')
+def _get_top_gainers(index: str):
+    ALLOWED_INDICES = ['gainers', 'loosers']
+    try:
+        if index not in ALLOWED_INDICES:
+            raise HTTPException(status_code=405, detail="Index not allowed")
+    except Exception as e:
+        logging.error(f"Error {e}")
+        return {"Error": e}
+           
+    result = top_stocks.performance(index)
+    return result
