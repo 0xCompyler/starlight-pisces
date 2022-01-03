@@ -17,7 +17,7 @@
   <p align="center">
     India's First Gamified Virtual Trading Platform
     <br />
-    <a href="https://aqua-client.vercel.app/h"><strong>Visit the website »</strong></a>
+    <!-- </a> -->
     <br />
     <br />
     <a href="https://github.com/0xCompyler/starlight-taurus/">Client Server</a>
